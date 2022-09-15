@@ -1,0 +1,235 @@
+@import '../variables.scss';
+@import '../libs/normalize';
+
+.header{
+     position: relative;
+     padding: 20px;
+     display: flex;
+     justify-content: space-between;
+     border-bottom: 1px solid var(--teme-border);
+     @media (max-width: 1470px){
+          padding: 10px;
+     }
+     @media (max-width: 1220px){
+          padding: 8px;
+     }
+     @media (max-width: 1024px){
+          padding: 5px;
+     }
+     @media (max-width: 955px){
+          display: none;
+     } 
+
+     
+     .display{
+          display: flex;
+          flex-grow: 1;
+          justify-content: space-between;
+          align-items: center;
+          @media (max-width: 955px){
+               justify-content: end;
+          }
+     }
+     .display > a:not(:last-child){
+          padding: 5px 20px;
+          display: flex;
+          align-items: center;
+          font-size: 24px;
+          border-radius: 30px;
+          @media (max-width: 955px){
+               display: none;
+          }
+          &:hover{
+               cursor: pointer;
+          }
+          @media (max-width: 1470px){
+               padding: 3px 14px;
+               font-size: 22px;
+          }
+          @media (max-width: 1220px){
+               padding: 3px 12px;
+               font-size: 20px;
+          }
+          @media (max-width: 1024px){
+               padding: 2px 10px;
+          font-size: 20px;
+          }
+     }
+     
+     .display--info{
+          border: 2px solid var(--teme-border);
+          transition: all 0.1s ease-in;
+          &:hover{
+          background-color: var(--teme-backround);
+          color: var(--teme-text);
+          cursor: pointer;
+          border: 2px solid white;
+          }
+
+     }
+     .display--autumn{
+          padding: 5px 20px;
+          display: flex;
+          align-items: center;
+          font-size: 24px;
+          border-radius: 30px;
+          border: 2px solid #EDB13D;
+          transition: all 0.1s ease-in; 
+          &:hover{
+               background-color: #EDB13D;
+               cursor: pointer;
+               border: 2px solid white;
+          }
+          @media (max-width: 1470px){
+               padding: 3px 14px;
+               font-size: 22px;
+          }
+          @media (max-width: 1220px){
+               padding: 3px 12px;
+               font-size: 20px;
+          }
+          @media (max-width: 1024px){
+               padding: 2px 10px;
+               font-size: 20px;
+          }
+          @media (max-width: 955px){
+               display: none;
+          }
+     }
+     .display--spring{
+          border: 2px solid #6CE262;
+          transition: all 0.1s ease-in;
+          &:hover{
+          background-color: #6CE262;
+          cursor: pointer;
+          border: 2px solid white;
+          }
+     }
+     .display--summer{
+          border: 2px solid #F4F85E;
+          transition: all 0.1s ease-in;
+          &:hover{
+          background-color: #F4F85E;
+          cursor: pointer;
+          border: 2px solid white;
+          }
+     }
+     .display--winter{
+          border: 2px solid #7AB9E7;
+          transition: all 0.1s ease-in;
+          &:hover{
+          background-color: #7AB9E7;
+          cursor: pointer;
+          border: 2px solid white;
+          }
+     }
+     
+     .active{
+          background-color: var(--teme-backround);
+     }
+     
+     .display--cart{
+          position: relative;
+          width: 160px;
+          padding: 10px 10px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          font-size: 20px;
+          border-radius: 30px;
+          border: 2px solid var(--teme-backround);
+          background-color: black;
+          transition: all 0.1s ease-in;
+          @media (max-width: 1470px){
+               padding: 5px 14px;
+               font-size: 18px;
+               width: 140px;
+          }
+          @media (max-width: 1220px){
+               padding: 2px 10px;
+               font-size: 18px;
+               width: 80px;
+               justify-content:flex-end;
+          }
+          @media (max-width: 955px){
+               padding: 5px 14px;
+               width: 140px;
+               justify-content:space-between;
+          }
+
+          &__price{
+               @media (max-width: 1220px){
+                    display: none;
+               }
+               @media (max-width: 955px){
+                    display: block;
+               }
+          }
+          &__line{
+          position: absolute;
+          width: 1px;
+          height: 100%;
+          top: 0;
+          left: 80px;
+          background-color: #fff;
+          @media (max-width: 1470px){
+               left: 70px;
+          }
+          @media (max-width: 1220px){
+               display: none;
+          }
+          @media (max-width: 955px){
+               display: block;
+          }
+          }
+     
+          &__count{
+          &::before{
+          content: "";
+          position: absolute;
+          left: 90px ;
+          background-image: url("../../assets/icons/cart.svg");
+          background-size: cover;
+          width: 32px;
+          height: 32px;
+          @media (max-width: 1470px){
+               width: 24px;
+               height: 24px;
+               left: 70px ;
+          }
+          @media (max-width: 1220px){
+               left: 10px;   
+               width: 24px;
+               height: 24px;
+          }
+          @media (max-width: 955px){
+               width: 24px;
+               height: 24px;
+               left: 70px ;
+          }
+          }
+          }
+     
+          &:hover{
+          cursor: pointer;
+          border: 2px solid white;
+          background-color: var(--teme-backround);
+          }
+     }
+     
+     .active--cart{
+          border: 2px solid white;
+          background-color: var(--teme-backround);
+     } 
+     .title{
+          margin: 0 40px;
+          @media (max-width: 1470px){
+               margin: 0 30px;
+               font-size: 50px;
+          }
+          @media (max-width: 1024px){
+               margin: 0 20px;
+               font-size: 44px;
+          }
+     }
+}

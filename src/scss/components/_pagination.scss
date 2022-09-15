@@ -1,0 +1,28 @@
+.paginate{
+     display: flex;
+     justify-content: center;
+     li{
+          display: inline-block;
+
+          &.selected{
+               a{
+               background-color: var(--teme-backround);
+               color: white;}
+          }
+     a{
+          display: flex;
+          justify-content: center;
+          padding: 10px;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          margin-right: 10px;
+          cursor: pointer;
+          &:hover{
+               background-color: var(--teme-backround);
+               color: white;
+          }
+     }
+}
+     
+}

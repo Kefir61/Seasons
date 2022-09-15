@@ -1,0 +1,70 @@
+@import '../variables.scss';
+@import '../libs/normalize';
+
+.bm-burger-button {
+     @media (min-width: 955px){
+          display: none;
+     }
+     position: fixed;
+     width: 36px;
+     height: 30px;
+     left: 25px;
+     top: 25px;
+}
+
+.bm-burger-bars {
+     background: #ffffff;
+}
+
+.bm-burger-bars-hover {
+     background: var(--teme-backround);
+}
+
+.bm-cross-button {
+     height: 24px;
+     width: 24px;
+}
+
+.bm-cross {
+     background: #fff;
+}
+
+.bm-menu-wrap {
+     position: absolute;
+     height: 100%;
+     width: 200px;
+}
+
+.bm-menu {
+     background: var(--teme-backround);
+     padding: 2.5em 1.5em 0;
+     font-size: 1.15em;
+}
+
+.bm-morph-shape {
+     fill: var(--teme-backround)
+}
+
+.bm-item-list {
+     color: #b8b7ad;
+     padding: 0.8em;
+} 
+.bm-item {
+     display: inline-block;
+}
+
+.bm-overlay {
+     background: rgba(0, 0, 0, 0.3);
+}
+
+.bm-item {
+     display: block;
+     color: #000000;
+     margin-bottom: 10px;
+     text-align: left;
+     text-decoration: none;
+     transition: color 0.2s;
+} 
+.bm-item:hover {
+     color: #ffffff;
+}

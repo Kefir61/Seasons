@@ -1,0 +1,40 @@
+$winter: #7AB9E7;
+$spring: #6CE262;
+$summer: #F4F85E;
+$autumn:#EDB13D;
+$cart:#fff;
+
+
+// :root{
+//      --teme-winter: #{$winter};
+//      --teme-spring: #{$spring};
+//      --teme-summer: #{$summer};
+//      --teme-autumn: #{$autumn};
+//      --teme-cart: #{$cart};
+//      --teme-default: var(#{--teme-spring});
+// }
+
+
+html[data-teme='winter'] {
+     --teme-text:#fff;
+     --teme-backround: #7AB9E7;
+     --teme-border:#7AB9E7;
+}
+
+html[data-teme='spring'] {
+     --teme-text:#fff;
+     --teme-backround: #6CE262;
+     --teme-border:#6CE262;
+}
+
+html[data-teme='summer'] {
+     --teme-text:#fff;
+     --teme-backround: #F4F85E;
+     --teme-border:#F4F85E;
+}
+
+html[data-teme='autumn'] {
+     --teme-text:#fff;
+     --teme-backround: #EDB13D;
+     --teme-border:#EDB13D;
+}
