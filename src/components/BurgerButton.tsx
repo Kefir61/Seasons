@@ -6,12 +6,12 @@ import { selectTeme, setTeme, setTitle } from '../redux/slices/temeSlice'
 const BurgerButton = () => {
      const dispatch = useDispatch()
      const { title, teme } = useSelector(selectTeme)
-     const onClickSeason = (season, id) => {
+     const onClickSeason = (season: string, id: number) => {
           dispatch(setTeme(season))
           dispatch(setTitle(id))
      }
 
-     const classNameDisplay = (str, number) => {
+     const classNameDisplay = (str: string, number: number) => {
           return `${title === number ? 'active' : ''}`
      }
      return (

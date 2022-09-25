@@ -6,7 +6,6 @@ import Account from './page/Account';
 import Reviews from './page/Reviews';
 import Discounts from './page/Discounts';
 import { Routes, Route } from 'react-router-dom';
-
 function App() {
   return (
     <>

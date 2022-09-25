@@ -13,19 +13,20 @@ import BurgerButton from '../components/BurgerButton';
 import { selectCart } from '../redux/slices/cartSlice'
 import { Link } from 'react-router-dom'
 import Pagination from '../components/Pagination'
+import Search from '../components/Search'
 function Menu() {
 
      const dispatch = useDispatch();
      const { teme, title } = useSelector(selectTeme)
      const { items, status } = useSelector(selectMenu)
      const { totalCount } = useSelector(selectCart)
-     const { type, page } = useSelector(selectFilter)
-     const menuTitle = ['Зимнее', 'Весеннее', 'Летнее', 'Осенее']
-
+     const { type, page, searchValue } = useSelector(selectFilter)
+     const menuTitle = ['Зимнее', 'Весеннее', 'Летнее', 'Осеннее']
 
      const onPageChange = (page: number) => {
           dispatch(setPage(page))
      }
+
      const getMenu = async () => {
           //@ts-ignore
           dispatch(fetchMenu({ season: teme, currentPage: page, type }))
@@ -35,7 +36,16 @@ function Menu() {
      useEffect(() => {
           document.documentElement.setAttribute('data-teme', teme)
           getMenu()
-     }, [teme, type, page])
+     }, [teme, type, page, searchValue])
+
+
+     const menuItems = items.filter((obj: any) => {
+          if (obj.name.toLowerCase().includes(searchValue.toLowerCase())) {
+               return true
+          }
+          return false
+     }).map((item: MenuItemType) => <MenuItem {...item} key={item.id} />)
+
 
      return (
           <div className='menu'>
@@ -46,12 +56,15 @@ function Menu() {
                <div className="wrapper">
                     <Header />
                     <div className="content">
-                         <h2 className="content--title">{menuTitle[title] + ' меню'}</h2>
+                         <div className='content--search'>
+                              <h2 className="content--search__title">{menuTitle[title] + ' меню'}</h2>
+                              <Search />
+                         </div>
                          <Filters />
                          <div className="content--cards">
                               {(status === 'LOADING')
                                    ? [...new Array(8)].map((_, index) => <Skeleton key={index}></Skeleton>)
-                                   : items.map((item: MenuItemType) => <MenuItem {...item} key={item.id} />)}
+                                   : menuItems}
                          </div>
                          <Pagination onChangePage={onPageChange} />
                     </div>
