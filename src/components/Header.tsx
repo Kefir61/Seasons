@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { selectTeme, setTeme, setTitle } from '../redux/slices/temeSlice'
 import { useNavigate } from 'react-router-dom';
 import { selectCart } from '../redux/slices/cartSlice'
+import { useAuth } from '../hooks/use-auth'
 function Header() {
 
      const dispatch = useDispatch()
@@ -23,7 +24,7 @@ function Header() {
      useEffect(() => {
           document.documentElement.setAttribute('data-teme', teme)
      }, [teme])
-
+     const { isAuth } = useAuth();
      const classNameDisplay = (str: string, number: number) => {
           return `display--${str} ${title === number ? 'active' : ''}`
      }
@@ -55,7 +56,10 @@ function Header() {
                <div className="header--display display">
                     <Link to='/discounts' className="display--info">Акции</Link>
                     <Link to='/reviews' className="display--info">Отзывы</Link>
-                    <Link to='/account' className="display--info">Аккаунт</Link>
+                    {isAuth
+                         ? <Link to='/account' className="display--info">Аккаунт</Link>
+                         : <Link to='/account/login' className="display--info">Аккаунт</Link>
+                    }
                     <Link to='/cart' className="display--cart">
                          <div className="display--cart__price">{totalPrice} ₽</div>
                          <div className="display--cart__line"></div>

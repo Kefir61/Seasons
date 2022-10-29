@@ -1,0 +1,30 @@
+.comment--form{
+     position: absolute;
+     bottom:0px;
+     left: 20px;
+     display: flex;
+     height: 55px;
+     &__textarea{
+          padding: 5px;
+          width: 300px;
+          border: 2px solid black;
+     }
+     &__button{
+          margin-left: 10px;
+          height: 55px;
+          padding: 0 20px;
+          border-radius: 20px;
+          transition: all 0.2s ease-in;
+          color: #fff;
+          background-color: black;
+          border: 1px solid #fff;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 16px;
+          cursor: pointer;
+          &:hover{
+               background-color: var(--teme-backround);
+          }
+     }
+}

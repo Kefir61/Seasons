@@ -2,6 +2,7 @@ import { configureStore } from '@reduxjs/toolkit'
 import temeReducer from './slices/temeSlice'
 import menuReducer from './slices/menuSlice'
 import cartReducer from './slices/cartSlice'
+import userReducer from './slices/userSlice'
 import filterReducer from './slices/filterSlice'
 import { useDispatch } from 'react-redux';
 export const store = configureStore({
@@ -9,7 +10,8 @@ export const store = configureStore({
           teme: temeReducer,
           menu: menuReducer,
           cart: cartReducer,
-          filter: filterReducer
+          filter: filterReducer,
+          user: userReducer
      },
 })
 

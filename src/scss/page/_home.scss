@@ -1,0 +1,167 @@
+.home{
+     padding: 20px 0 10px 0;
+     position: relative;
+     min-height: 99vh;
+     background-color: #000000;  
+     @media (max-width: 1024px){
+       padding: 0;
+       min-height: 100vh;
+     }
+     .gorisontal{
+          position: absolute;
+          width: 100%;
+          left: 0;
+          &--top{
+               top: 10px;
+          }
+          &--bottom{
+               bottom: 10px;
+          }
+          & img{
+               width: 100%;
+               height: 15px;
+               background-size: cover;
+          }
+          @media (max-width: 1024px){
+           display: none;
+         }
+     }
+     .vertical{
+          position: absolute;
+          height: 100%;
+          top: 0;
+          &--left{
+               left: 10px;
+          }
+          &--right{
+               right: 10px;
+          }
+          & img{
+               width: 15px;
+               height: 100%;
+               background-size: cover;
+          }
+          @media (max-width: 1024px){
+           display: none;
+         }
+     }
+     .home--title{
+          padding-top: 5px;
+          font-family: 'High Tower Text';
+          text-align: center;
+          font-size: 74px;
+          letter-spacing: 0.1em;
+          text-decoration: underline white 1px;
+          color: #FFFFFF;
+          @media (max-width: 1024px){
+           padding: 0;
+           font-size: 64px;
+           display: none;
+         }
+     } 
+     .navigate{
+          display: grid;
+          max-height: 400px;
+          max-width: 700px;
+          margin: 70px auto 40px auto;
+          grid-template-columns: 25% 12.5% 25% 12.5% 25%;
+          grid-template-rows: 40% 20% 40%;
+          @media (max-width: 1024px){
+           margin: 0 auto;
+           min-width: 100%;
+           max-height: 100%;
+           display: flex;
+           flex-direction: column;
+         } 
+          .navigate__vertical--line{
+               width: 100%;
+               height: 100%;
+               @media (max-width: 1024px){
+                 display: none;
+               } 
+          }
+          .navigate__vertical--line2{
+               grid-column-start: 4;
+               grid-row-start: 3;
+               @media (max-width: 1024px){
+                 display: none;
+               } 
+     
+               & img{
+                    width: 100%;
+                    height: 100%;
+               }
+          }
+          .navigate__gorisontal--line{
+               grid-column-start: 3;
+               grid-row-start: 2;
+               display: flex;
+               justify-content: center;
+               align-items: center;
+               @media (max-width: 1024px){
+                 display: none;
+               } 
+          }
+          .navigate__item{
+           @media (max-width: 1024px){
+             height: 100px;
+           } 
+               &:hover{
+                    cursor: pointer;
+                    transform: translateY(-10px);
+                    opacity: 1;
+                    transition: all 0.1s ease-in;
+   
+               }
+          }
+          .navigate__winter{
+               box-shadow: 0px 0px 20px rgb(25, 87, 202);
+               background: linear-gradient(0deg, rgba(112, 129, 221, 0.2), rgba(112, 129, 221, 0.2)), url('../../assets/img/зима.jpg');
+               background-size: cover;
+               opacity: 60%;
+               @media (max-width: 1024px){
+                 height: 25vh;
+                 opacity: 100%;
+                 box-shadow: 0;
+               } 
+          }
+          .navigate__spring{
+               box-shadow: 0px 0px 20px rgb(25, 202, 75);
+               grid-column-start: 3;
+               background: linear-gradient(0deg, rgba(56, 187, 93, 0.2), rgba(56, 187, 93, 0.2)), url('../../assets/img/весна.jpg');
+               background-size: cover;
+               opacity: 60%;
+               @media (max-width: 1024px){
+                 opacity: 100%;
+                 box-shadow: 0;
+                 height: 25vh;
+               } 
+          }
+          .navigate__summer{
+               box-shadow: 0px 0px 20px rgb(199, 202, 25);
+               grid-column-start: 3;
+               grid-row-start: 3;
+               background: linear-gradient(0deg, rgba(154, 151, 83, 0.2), rgba(154, 151, 83, 0.2)), url('../../assets/img/лето.jpg');
+               background-size: cover;
+               opacity: 60%;
+               @media (max-width: 1024px){
+                 opacity: 100%;
+                 box-shadow: 0;
+                 height: 25vh;
+               } 
+          }
+          .navigate__autumn{
+               box-shadow: 0px 0px 20px rgb(202, 119, 25);
+               grid-column-start: 5;
+               grid-row-start: 3;
+               background: linear-gradient(0deg, rgba(213, 126, 63, 0.2), rgba(213, 126, 63, 0.2)), url('../../assets/img/осень.jpg');
+               background-size: cover;
+               opacity: 60%;
+               @media (max-width: 1024px){
+                 height: 25vh;
+                 opacity: 100%;
+                 box-shadow: 0;
+               } 
+          }
+     }
+   }

@@ -1,0 +1,180 @@
+//AUTHORISATION
+.authorization{
+     min-height: 100vh;
+     width:100%;
+     background-color: black;
+     display: flex;
+     flex-direction: column;
+     main{
+       flex: 1 0 auto;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+    }
+    &--content{
+      
+      padding: 30px;
+      border-radius: 30px;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      width: 400px;
+      min-height: 350px;
+      background-color: var(--teme-backround);
+      &__links{
+        margin-bottom: 30px;
+        & a{    
+          margin-right: 30px;
+          font-size: 20px;
+          font-weight: bold;
+           //color: #000000;
+          &:hover{
+            cursor: pointer;
+            text-decoration: underline;
+            text-decoration-color: white;
+            text-decoration-skip-ink: none;
+          }
+        }
+        & .active--authorization__link{
+          text-decoration: underline;
+          text-decoration-color: white;
+          text-decoration-skip-ink: none;
+        }
+      }
+
+      & form{
+        display: flex;
+        flex-direction: column;
+        .input--error{
+          font-size: 14px;
+          color:red;
+          position: relative;
+          padding-left: 13px;
+          &::after{
+            content: "";
+            position: absolute;
+            left: 0;
+            top:5px;
+            background-image: url("../../assets/icons/error.svg");
+            background-size: cover;
+            width: 12px;
+            height: 12px;
+        }
+      }
+      
+        & input{
+          padding: 6px 5px;
+          color: black;
+          margin-bottom: 10px;
+          border-radius: 5px;
+          background-color: white;
+          border: 1px solid black;
+          &.registration--none{
+            display: none;
+          }
+        }
+        & button{
+          height: 55px;
+          border-radius: 20px;
+          transition: all 0.2s ease-in;
+          color: #fff;
+          background-color: black;
+          border: 1px solid #fff;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 16px;
+          &:hover{
+            background-color: var(--teme-backround);
+            cursor: pointer;
+          }
+          &:disabled{
+            cursor:no-drop;
+            display: block;
+            border: 3px solid rgb(255, 0, 0);
+            &:hover{
+              background-color: black;
+            }
+          }
+        }
+      }
+    }
+  }
+
+//ACCOUNT
+.account{
+  min-height: 100vh;
+  width:100%;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+
+  &--title{
+    margin-top: 20px;
+    margin-left: 20px;
+    @media (max-width: 955px){
+      text-align: center;
+    }
+}
+  main{
+    flex: 1 0 auto;
+  }
+
+  &--content{
+    margin-top: 20px;
+    margin-left: 20px;
+    display: flex;
+    &__link{
+      min-width: 200px; 
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+        img{
+          margin-right: 10px;
+          width: 20px;
+          height: 20px;
+          background-color: var(--teme-backround);
+        }
+        :hover{
+          cursor: pointer;
+          background-color: var(--teme-backround);
+        }
+    }
+    &__info{
+      margin: 0 50px 20px 50px;
+      padding: 20px 20px 0px 20px;
+      position: relative;
+      border-radius: 30px;
+      width: 100%;
+      min-height: 350px;
+      background-color: var(--teme-backround);
+      & .logout--button{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        padding: 0 20px;
+        height: 55px;
+        border-radius: 20px;
+        transition: all 0.2s ease-in;
+        color: #fff;
+        background-color: black;
+        border: 1px solid #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 16px;
+        cursor: pointer;
+        &:hover{
+          background-color: var(--teme-backround);
+        }
+      }
+
+      & .info--account__section{
+        margin-top: 10px;
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+  }
+
+}

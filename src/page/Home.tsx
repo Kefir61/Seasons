@@ -21,6 +21,7 @@ const Home: React.FC = () => {
      }, [])
      return (
           <div className="home">
+
                <div className='home--content'>
                     <BorderHome />
                     <h1 className='home--title'>SEASON</h1>

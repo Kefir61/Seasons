@@ -10,6 +10,7 @@
     "@types/redux": "^3.6.0",
     "add": "^2.0.6",
     "axios": "^0.27.2",
+    "firebase": "^9.10.0",
     "lodash.debounce": "^4.0.8",
     "node-sass": "^7.0.1",
     "react": "^18.2.0",
